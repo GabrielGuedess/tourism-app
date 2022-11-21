@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.tourism'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.tourism"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField 'String', "MapboxAccessToken", '"sk.eyJ1IjoiZ2FicmllbGd1ZWRlczU4IiwiYSI6ImNsYWl4cGdtdTA3MDUzbnN1OTgyazd6bG0ifQ.zmNpyJbbTqWyWks329eIzQ"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "MapboxAccessToken", "sk.eyJ1IjoiZ2FicmllbGd1ZWRlczU4IiwiYSI6ImNsYWl4cGdtdTA3MDUzbnN1OTgyazd6bG0ifQ.zmNpyJbbTqWyWks329eIzQ"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.mapbox.maps:android:10.9.1'
+    implementation "androidx.startup:startup-runtime:1.1.1"
+    implementation "com.google.android.gms:play-services-location:21.0.1"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}

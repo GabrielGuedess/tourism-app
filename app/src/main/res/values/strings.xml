@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tourism</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiZ2FicmllbGd1ZWRlczU4IiwiYSI6ImNsYWl4cGdtdTA3MDUzbnN1OTgyazd6bG0ifQ.zmNpyJbbTqWyWks329eIzQ</string>
+</resources>

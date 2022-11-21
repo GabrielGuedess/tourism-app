@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:mapbox_attributionEnabled="false"
+        app:mapbox_cameraTargetLat="-23.4543421"
+        app:mapbox_cameraTargetLng="-46.5031358"
+        app:mapbox_cameraZoom="6.0"
+        app:mapbox_logoEnabled="false"
+        app:mapbox_scaleBarMarginLeft="10dp"
+        app:mapbox_scaleBarMarginTop="40dp"
+        app:mapbox_scaleBarPrimaryColor="@color/gray"
+        app:mapbox_scaleBarSecondaryColor="@color/violet_600"
+        app:mapbox_compassMarginTop="40dp"
+        app:mapbox_scaleBarTextBarMargin="5dp"
+        app:mapbox_scaleBarTextBorderWidth="0dp"
+        app:mapbox_scaleBarTextColor="@color/white"
+        app:mapbox_scaleBarTextSize="10dp"
+        app:mapbox_scaleBarHeight="3dp">
+    </com.mapbox.maps.MapView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

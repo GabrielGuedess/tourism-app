@@ -2,7 +2,6 @@ package com.example.tourism;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.location.Location;
@@ -11,7 +10,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -19,7 +17,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mapbox.geojson.Point;
 import com.mapbox.maps.CameraOptions;
 import com.mapbox.maps.MapView;
-import com.mapbox.maps.MapboxMap;
 import com.mapbox.maps.Style;
 import com.mapbox.maps.plugin.animation.CameraAnimationsUtils;
 import com.mapbox.maps.plugin.animation.Cancelable;
@@ -89,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         .build()
         );
 
+        //park
         List<List<Point>> pointsBosqueMaia = List.of(List.of(
                 Point.fromLngLat(-46.53339359444723, -23.45451046687174),
                 Point.fromLngLat(-46.528378467719534, -23.459765977969326),
@@ -120,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.53339994832268, -23.45447397426068)
         ));
 
+        //entre
         List<List<Point>> pointsShoppingInternacional = List.of(List.of(
                 Point.fromLngLat(-46.55115547756111, -23.486541012137025),
                 Point.fromLngLat(-46.55133879657643, -23.48747219989312),
@@ -167,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.55115547756111, -23.486541012137025)
         ));
 
+        //lazer
         List<List<Point>> pointsIgreja = List.of(List.of(
                 Point.fromLngLat(-46.531480992636546, -23.470180858442603),
                 Point.fromLngLat(-46.53079350477421, -23.470100834592174),
@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.531480992636546, -23.470180858442603)
         ));
 
+        //lazer
         List<List<Point>> pointsZoologico = List.of(List.of(
                 Point.fromLngLat(-46.554646932206, -23.44388000760243),
                 Point.fromLngLat(-46.55392906536042, -23.444071824764464),
@@ -240,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.554646932206, -23.44388000760243)
         ));
 
+        //entre
         List<List<Point>> pointsShoppingMaia = List.of(List.of(
                 Point.fromLngLat(-46.54025254908035, -23.442644909617357),
                 Point.fromLngLat(-46.540892151247334, -23.443123170516387),
@@ -254,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.54025254908035, -23.442644909617357)
         ));
 
+        //park
         List<List<Point>> pointsLagoDosPatos = List.of(List.of(
                 Point.fromLngLat(-46.563805979637266, -23.45147177084337),
                 Point.fromLngLat(-46.56259178508839, -23.451902745595234),
@@ -286,6 +289,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.563805979637266, -23.45147177084337)
         ));
 
+        //park
         List<List<Point>> pointsParqueJulioFracalanza = List.of(List.of(
                 Point.fromLngLat(-46.544970483561286, -23.48056401406079),
                 Point.fromLngLat(-46.545590782465695, -23.481501641415946),
@@ -297,6 +301,7 @@ public class MainActivity extends AppCompatActivity {
                 Point.fromLngLat(-46.544970483561286, -23.48056401406079)
         ));
 
+        //entre
         List<List<Point>> pointsAdamastor = List.of(List.of(
                 Point.fromLngLat(-46.518624845666636, -23.469281763184185),
                 Point.fromLngLat(-46.51832436850398, -23.46923947230742),
@@ -318,52 +323,49 @@ public class MainActivity extends AppCompatActivity {
         ));
 
 
-
-
-
         AnnotationPlugin annotationAPI = AnnotationPluginImplKt.getAnnotations((MapPluginProviderDelegate) mapView);
 
         PolygonAnnotationManager polygonAnnotationManager = PolygonAnnotationManagerKt.createPolygonAnnotationManager(annotationAPI, mapView);
 
         PolygonAnnotationOptions polygonAnnotationOptionsBosque = new PolygonAnnotationOptions()
                 .withPoints(pointsBosqueMaia)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#7FDA23")
                 .withFillOpacity(0.4);
 
 
         PolygonAnnotationOptions polygonAnnotationOptionsInter = new PolygonAnnotationOptions()
                 .withPoints(pointsShoppingInternacional)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#FFBE1A")
                 .withFillOpacity(0.4);
 
         PolygonAnnotationOptions polygonAnnotationOptionsIgreja = new PolygonAnnotationOptions()
                 .withPoints(pointsIgreja)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#59C3FF")
                 .withFillOpacity(0.4);
 
         PolygonAnnotationOptions polygonAnnotationOptionsZoologico = new PolygonAnnotationOptions()
                 .withPoints(pointsZoologico)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#59C3FF")
                 .withFillOpacity(0.4);
 
         PolygonAnnotationOptions polygonAnnotationOptionsMaia = new PolygonAnnotationOptions()
                 .withPoints(pointsShoppingMaia)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#FFBE1A")
                 .withFillOpacity(0.4);
 
         PolygonAnnotationOptions polygonAnnotationOptionsLago = new PolygonAnnotationOptions()
                 .withPoints(pointsLagoDosPatos)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#7FDA23")
                 .withFillOpacity(0.4);
 
         PolygonAnnotationOptions polygonAnnotationOptionsJulio = new PolygonAnnotationOptions()
                 .withPoints(pointsParqueJulioFracalanza)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#7FDA23")
                 .withFillOpacity(0.4);
 
         PolygonAnnotationOptions polygonAnnotationOptionsAdamastor = new PolygonAnnotationOptions()
                 .withPoints(pointsAdamastor)
-                .withFillColor("#FFFFFF")
+                .withFillColor("#FFBE1A")
                 .withFillOpacity(0.4);
 
 
@@ -373,41 +375,41 @@ public class MainActivity extends AppCompatActivity {
 
         PointAnnotationOptions pointAnnotationOptions = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.529687773412746, -23.457351838840353))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_green));
 
         PointAnnotationOptions pointAnnotationOptionsShopping = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.549118601134445, -23.4879523668775))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_orange));
 
         PointAnnotationOptions pointAnnotationOptionsIgreja = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.53104863144423, -23.470117607763537))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_blue));
 
         PointAnnotationOptions pointAnnotationOptionsZoologica = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.55328043165855,
                         -23.442689862086453))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_blue));
 
         PointAnnotationOptions pointAnnotationOptionsShoppingMaia = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.540031569708674,
                         -23.443413274698784))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_orange));
 
         PointAnnotationOptions pointAnnotationOptionsLagoDosPatos = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.56339968861684,
                         -23.45235282995284423668775))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_green));
 
         PointAnnotationOptions pointAnnotationOptionsJulio = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.54599142460762,
                         -23.480656207654988
                 ))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_green));
 
         PointAnnotationOptions pointAnnotationOptionsAdamastor = new PointAnnotationOptions()
                 .withPoint(com.mapbox.geojson.Point.fromLngLat(-46.51885886375584,
                         -23.46960231735447))
-                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location));
+                .withIconImage(BitmapFactory.decodeResource(this.getResources(), R.drawable.location_orange));
 
 
         pointAnnotationManager.create(pointAnnotationOptions);

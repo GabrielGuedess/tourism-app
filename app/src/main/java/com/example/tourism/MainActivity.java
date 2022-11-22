@@ -9,11 +9,13 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mapbox.geojson.Point;
 import com.mapbox.maps.CameraOptions;
 import com.mapbox.maps.MapView;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
     private LocationManager locationManager;
 
+    private View bottomSheet;
+
     LocationListener locationListenerGPS = new LocationListener() {
         @Override
         public void onLocationChanged(android.location.Location location) {
@@ -58,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         mapView = findViewById(R.id.mapView);
 
         mapView.getMapboxMap().loadStyleUri(Style.DARK);
+
+        bottomSheet = findViewById(R.id.bottomSheet);
+        BottomSheetBehavior.from(bottomSheet).setPeekHeight(86);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
